@@ -95,3 +95,21 @@ Una sola debe fallar mientras no hayas hecho la Parte 2.
 ## Convenciones del curso
 
 Código, nombres y comentarios en inglés; explicaciones y entregables en español. PEP 8.
+
+## Entrega del laboratorio
+
+1. **Descripción**: laboratorio 07 "ORM con IA: duelo y verificador" (Desarrollo de Aplicaciones Empresariales).
+
+2. **Cómo ejecutarlo**: crear el entorno virtual, `pip install -r requirements.txt`, `python manage.py migrate`, `python manage.py seed_blog`, `python manage.py duel`, `python manage.py duel --source ai`, `python manage.py test`.
+
+3. **Qué se hizo y resultados**:
+   - `blog/duel/team.py`: las ocho consultas, 8 de 8 correctas y baratas en el duelo.
+   - La IA del paso 6 acertó 3 de 8; ChatGPT con `models.py` acertó 7 de 8 (falló q8).
+   - `blog/queries.py`: `select_related("author")` y `prefetch_related("tags")`; la portada pasó de 23 a 2 consultas.
+   - Agente: las cuatro intenciones respondieron ok, ok, approval_required y denied; el borrado exige un plan con hash aprobado, y si los datos cambian entre el plan y la aprobación el hash cambia y no se aplica.
+
+4. **Nota**: `test_the_starter_has_nothing_written` falla a propósito de diseño, porque `team.py` ya no está vacío.
+
+5. **Uso de IA**: Claude, ChatGPT y OpenCode, con autorización del docente; el detalle está en el entregable en Word.
+
+6. **Autor**: Alexander Faustino.
